@@ -32,7 +32,7 @@ resource "azurerm_application_gateway" "appgateway" {
 
   frontend_port {
     name = local.frontend_port_name
-    port = 80
+    port = 3030
   }
 
   frontend_ip_configuration {
@@ -48,7 +48,6 @@ resource "azurerm_application_gateway" "appgateway" {
   backend_http_settings {
     name                  = local.http_setting_name
     cookie_based_affinity = "Disabled"
-    path                  = "/path1/"
     port                  = 3030
     protocol              = "Http"
     request_timeout       = 20
